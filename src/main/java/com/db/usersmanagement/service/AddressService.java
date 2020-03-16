@@ -1,22 +1,12 @@
 package com.db.usersmanagement.service;
 
 import com.db.usersmanagement.entity.Address;
-import com.db.usersmanagement.repository.AddressRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-@Service
-public class AddressService {
+public interface AddressService {
 
-    private final AddressRepository addressRepository;
+    void createAddress(Address address);
 
-    @Autowired
-    public AddressService(AddressRepository addressRepository){
-        this.addressRepository = addressRepository;
-    }
+    void viewAddress(Long id);
 
-    public void createAddress(Address address){
-        addressRepository.save(address);
-    }
-
+    void deleteAddress(Long id);
 }
